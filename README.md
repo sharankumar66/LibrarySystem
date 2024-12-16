@@ -11,7 +11,7 @@ Clone the repository to your local machine:
 git clone https://github.com/your-username/your-repository.git
 cd your-repository
 ```
-2. Set Up Virtual Environment (Optional but Recommended)
+### 2. Set Up Virtual Environment (Optional but Recommended)
 To create an isolated environment for your project, follow these steps:
 
 Install virtualenv if you don't have it:
@@ -37,13 +37,13 @@ On macOS/Linux:
 source venv/bin/activate
 ```
 
-3. Install Dependencies
+### 3. Install Dependencies
 Install all required dependencies using requirements.txt:
 
 ```bash
 pip install -r requirements.txt
 ```
-4. Set Up Celery
+### 4. Set Up Celery
 To handle background tasks, we use Celery with Redis as the broker.
 
 Install Redis (either locally or use a Redis cloud service like Redis Labs).
@@ -57,28 +57,28 @@ Start Celery in a new terminal window:
 ```bash
 celery -A your_project_name worker --loglevel=info
 ```
-5. Run Migrations
+### 5. Run Migrations
 Apply migrations to set up the database:
 ```bash
 python manage.py migrate
 ```
 
-6. Create Superuser (Admin)
+### 6. Create Superuser (Admin)
 Create a superuser account to access the Django admin panel:
 ```bash
 python manage.py createsuperuser
 ```
-7. Run the Development Server
+### 7. Run the Development Server
 Start the development server:
 ```bash
 python manage.py runserver
 ```
 The API will be available at http://127.0.0.1:8000.
 
-API Documentation
+## API Documentation
 The API documentation is available at http://127.0.0.1:8000/docs.
 
-API Endpoints
+## API Endpoints
 POST /api/token/ - Obtain JWT token (username, password).
 POST /api/token/refresh/ - Refresh JWT token.
 POST /api/borrow/ - Borrow a book (JWT required).
